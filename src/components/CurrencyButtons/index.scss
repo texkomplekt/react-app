@@ -1,0 +1,12 @@
+.buttons-segmented {
+    display: flex;
+    border-radius: 3px;
+    padding: 3px;
+    margin-bottom: 50px;
+    .button {
+        margin-right: 3px;
+    }
+    .button.code {
+        width: 45px;
+    }
+}

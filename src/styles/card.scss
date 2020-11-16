@@ -1,0 +1,9 @@
+.card {
+    border-radius: 3px;
+    &.light {
+        border: var(--light-border);
+        background: var(--light-background-2);
+    }
+}
+
+

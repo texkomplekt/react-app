@@ -1,0 +1,52 @@
+@import './theme';
+
+.button {
+  border-radius: 3px;
+  padding: 4px 6px;
+  box-shadow: none;
+  background: none;
+  cursor: pointer;
+  color: var(--border-color);
+  outline: var(--outline);
+  font-size: 1rem;
+  transition: all .3s ease-in-out;
+  &.icon {
+    font-size: 1.4rem;
+    border: none;
+  }
+  &.dark {
+    background: var(--dark-background-2);
+    border: var(--dark-border);
+    color: var(--dark-font-color-1);
+    &:hover {
+      color: var(--white-color);
+    }
+  }
+  &.light {
+    background: var(--light-background);
+    border: var(--light-border);
+    &:hover {
+      color: var(--dark-color-3);
+    }
+  }
+}
+
+.dropdown .button {
+  padding-right: 20px;
+  position: relative;
+  &:after {
+    content: '\142F';
+    position: absolute;
+    right: 7px;
+    top: 10px;
+    font-size: 0.7rem;
+  }
+}
+
+@each $color in $colors {
+  .button.active.#{$color}{
+     background: var(--#{$color}-color);
+     border-color: var(--#{$color}-color);
+     color: var(--white-color);
+  }
+}

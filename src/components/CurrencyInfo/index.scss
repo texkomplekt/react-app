@@ -1,0 +1,80 @@
+@import '../../styles/mixins';
+@import '../../styles/theme';
+@import '../../styles/header.scss';
+
+.currency-info {
+    @include for-phone-only {
+        grid-column-end: span 6;
+    }
+    @include for-tablet-portrait-up {
+        grid-column-end: span 4;
+    }
+    @include for-desktop-up {
+        grid-column-end: span 2;
+    }
+    position: relative;
+    border-radius: 3px;
+    border: .5px solid var(--border-color);
+    text-align: left;
+    .value {
+        display: flex;
+        font-size: 2rem;
+        text-align: center;
+        justify-content: space-between;
+        align-items: center;
+        > span {
+            flex-grow: 1;
+        }
+    }
+    .content {
+        padding: var(--padding-midi);
+        font-size: 1.4rem;
+        > p,
+        .date {
+            margin: 0;
+            margin-bottom: 10px;
+            display: inline-block;
+            margin-right: var(--padding-small);
+        }
+        .date {
+            display: block;
+            font-size: .9rem;
+            margin-bottom: var(--padding-midi);
+        }
+        .diff.positive {
+            position: relative;
+            color: var(--green-color);
+            font-size: .9rem;
+            flex-grow: 0;
+        }
+    }
+}
+
+@each $tone in $tones {
+    .currency-info.#{$tone} {
+        border: var(--#{$tone}-border);
+        background: var(--#{$tone}-background-2);
+        color: var(--#{$tone}-font-color-1);
+        .date {
+            color: var(--#{$tone}-font-color-2); 
+        }
+    }
+}
+.currency-info.dark {
+    .header:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+.currency-info.light {
+    .header:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+}
+
+@each $color in $colors {
+    .currency-info.#{$color} .color-code {
+        color: var(--#{$color}-color);
+    }
+}
+
+

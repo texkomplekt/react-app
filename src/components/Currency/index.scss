@@ -1,0 +1,8 @@
+.currency {
+    display: grid;
+    flex-grow: 1;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 300px auto;
+    padding: var(--padding-large);
+    grid-gap: var(--padding-midi);
+}

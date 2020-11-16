@@ -1,0 +1,74 @@
+@import './theme';
+
+.datepicker {
+    width: 240px;
+    .react-date-picker__wrapper {
+        padding: 5px;
+        border-radius: 3px;
+    }
+    button:focus {
+        outline: none;
+    }
+    .calendar {
+        border-radius: 3px;
+        .react-calendar__month-view__days__day--weekend {
+            color: var(--red-color) !important;
+        }
+        .react-calendar__viewContainer {
+            padding: var(--padding-small);
+        }
+    }
+
+}
+
+@each $tone in $tones {
+    .datepicker.#{$tone} {
+        .react-date-picker__wrapper,
+        .calendar {
+            color: var(--#{$tone}-font-color-1);
+            border: var(--#{$tone}-border);
+            background: var(--#{$tone}-background);
+        }
+        .react-date-picker__button__icon {
+            stroke: var(--#{$tone}-font-color-2) !important;
+            stroke-width: 1 !important;
+        }
+        input,
+        .react-calendar__month-view__days__day,
+        .react-calendar__tile {
+            color: var(--#{$tone}-font-color-1);
+        }
+        .react-calendar__month-view__days__day--neighboringMonth,
+        .react-calendar__month-view__weekdays__weekday,
+        .react-calendar__navigation__label,
+        .react-calendar__navigation__arrow {
+            color: var(--#{$tone}-font-color-2);
+        }
+        .react-calendar__tile,
+        .react-calendar__navigation button {
+            &:enabled:hover,
+            &:enabled:focus {
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+@each $color in $colors {
+    .datepicker .calendar.#{$color} {
+        .react-calendar__tile--active {
+            background: var(--#{$color}-color);
+        }
+        .react-calendar__tile--now:not(.react-calendar__tile--active) {
+            background: none;
+            border: 1px solid var(--#{$color}-color);
+            color: var(--#{$color}-color);
+        }
+        .react-calendar__tile {
+            &:enabled:hover,
+            &:enabled:focus {
+                color: var(--#{$color}-color);
+            }
+        }
+    }
+}

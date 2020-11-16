@@ -1,0 +1,55 @@
+@import '../../styles/theme';
+
+.header {
+    .header-top,
+    .header-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 var(--padding-midi);
+        height: 40px;
+    }
+    .header-bottom {
+        height: 50px;
+    }
+    .header-link {
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 1.1rem;
+        margin-right: var(--padding-midi);
+        transform: all .3s ease-in-out;
+        &:hover,
+        &:active {
+            text-decoration: none;
+        }
+    }
+}
+
+@each $tone in $tones {
+    .header.#{$tone} {
+        .header-bottom {
+            color: var(--#{$tone}-font-color);
+            background-color: var(--#{$tone}-background-3);
+        }
+        .header-link {
+            color: var(--#{$tone}-font-color-2);
+        }
+    }
+}
+
+@each $color in $colors {
+    .header.#{$color} {
+        .header-top {
+            background-color: var(--#{$color}-color);
+        }
+        .header-link:hover {
+            color: var(--#{$color}-color);
+            opacity: .8;
+        }
+        .header-link.active {
+            color: var(--#{$color}-color);
+        }
+    }
+}
+
+

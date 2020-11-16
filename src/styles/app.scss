@@ -1,0 +1,44 @@
+.app,
+.main {
+  &.dark {
+    background-color: var(--dark-background);
+  }
+}
+.app,
+.main {
+  &.light {
+    background-color: var(--light-background);
+  }
+}
+
+html {
+  overflow: hidden;
+}
+
+html,
+body,
+#root,
+.app {
+  height: 100%;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+}
+
+.main {
+  display: flex;
+  min-width: 599px;
+  max-height: 100%;
+  height: calc(100vh - 90px);
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgba(86, 86, 86, 0.5);
+}
+

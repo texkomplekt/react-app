@@ -1,0 +1,18 @@
+.svg {
+  overflow: visible;
+  z-index: 2000;
+  .path-container {
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+}
+
+.grid line {
+  stroke: red;
+  shape-rendercharting: crispEdges;
+}
+.grid path {
+  stroke-width: 0;
+}

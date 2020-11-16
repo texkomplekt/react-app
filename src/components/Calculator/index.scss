@@ -1,0 +1,54 @@
+@import '../../styles/theme';
+
+.calculator {
+    max-width: 800px;
+    min-width: 600px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    border-radius: 3px;
+    padding-bottom: 30px;
+    .calculator-wrapper {
+        padding: 0 var(--padding-large);
+    }
+    .form {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    .form-block {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 250px;
+    }
+    .error {
+        color: var(--red-color);
+    }
+    .single-rate {
+        display: inline-block;
+        font-size: .9rem;
+        margin-top: 30px;
+    }
+    .button-reverse {
+        align-self: flex-start;
+        margin: 0 var(--padding-small);
+        &:hover {
+            opacity: .7;
+        }
+    }
+}
+
+@each $tone in $tones {
+    .calculator.#{$tone} {
+        border: var(--#{$tone}-border);
+        background: var(--#{$tone}-background-2);
+        label {
+            color: var(--#{$tone}-font-color-1); 
+        }
+        .single-rate {
+            color: var(--#{$tone}-font-color-2);
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@import './theme';
+
+.input,
+input {
+    background-color: transparent;
+    background-image: none;
+    background: none;
+    box-shadow: none;
+    outline: none;
+    padding: 10px;
+    border-radius: 3px;
+    .label & {
+        margin-left: var(--padding-midi);
+    }
+    .form-item & {
+        margin-bottom: var(--padding-midi);
+    }
+}
+
+@each $color in $colors {
+    .input.#{$color}:focus {
+        border: 1px solid var(--#{$color}-color);
+    }
+}
+
+@each $tone in $tones {
+    .input.#{$tone} {
+        color: var(--#{$tone}-font-color-1);
+        border: var(--#{$tone}-border);
+        background: var(--#{$tone}-background);;
+    }
+    .label {
+        color: var(--#{$tone}-font-color-2);
+    }
+}

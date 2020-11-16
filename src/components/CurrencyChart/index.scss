@@ -1,0 +1,16 @@
+@import '../../styles/theme';
+
+.currency-chart {
+    grid-column-end: span 12;
+    grid-row-end: span 2;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+@each $tone in $tones {
+    .currency-chart.#{$tone} {
+        border: var(--#{$tone}-border);
+        background: var(--#{$tone}-background-2);
+        color: var(--#{$tone}-font-color-1);
+    }
+}

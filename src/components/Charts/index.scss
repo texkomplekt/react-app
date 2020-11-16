@@ -1,0 +1,9 @@
+.charts {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: 200px;
+    padding: var(--padding-large);
+    grid-gap: var(--padding-midi);
+    overflow-y: auto;
+}

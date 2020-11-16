@@ -1,0 +1,77 @@
+@import '../../styles/theme';
+
+.dropdown {
+  position: relative;
+  display: flex;
+  .dropdown-content {
+    width: max-content;
+    max-height: 300px;
+    position: absolute;
+    top: 100%;
+    z-index: 3010;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    word-break: break-all;
+    transition: all .4s ease-in-out;
+    border-radius: 3px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,.15);
+    overflow-y: auto;    
+    .list {
+      padding: 0;
+      list-style: none;
+      margin: 0;
+      min-width: 100px;
+      .item {
+        padding: var(--padding-small) var(--padding-midi);
+        padding-right: 20px;
+        position: relative;
+        cursor: pointer;
+        &:before {
+          content: '';
+          display: none;
+          position: absolute;
+          width: 2px;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          transition: all .3s linear;
+        }
+        &.active:after {
+          content: '\2713';
+          position: absolute;
+          right: 5px;
+          top: 3px;
+        }
+      }
+    }
+  }
+}
+
+.dropdown-button {
+  cursor: pointer;
+}
+
+@each $color in $colors {
+  .dropdown.#{$color} .item {
+    &:hover:before,
+    &.active:before {
+      display: block;
+      background: var(--#{$color}-color);
+    }
+  }
+}
+
+@each $tone in $tones {
+  .dropdown.#{$tone} .dropdown-content {
+      background: var(--#{$tone}-background);
+      color: var(--#{$tone}-font-color-1);
+      .item:hover,
+      .active {
+        background: var(--#{$tone}-background-3);
+      }
+  }
+}
+
+
+
+

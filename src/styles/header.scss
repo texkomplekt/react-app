@@ -1,0 +1,34 @@
+//header widget
+@import './theme';
+
+.header-widget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    transition: all .3s ease-in-out;
+    text-align: center;
+    .header-title {
+        position: relative;
+        margin: 0;
+        font-weight: normal;
+        margin-right: var(--padding-small);
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    .button {
+        border: none;
+        height: 1.8rem;
+        width: 20px;
+        padding: 10px;
+    }
+}
+
+@each $tone in $tones {
+    .header-widget.#{$tone} {
+        color: var(--#{$tone}-font-color-2);
+        &:hover {
+            background: var(--#{$tone}-background);
+        }
+    }
+}
